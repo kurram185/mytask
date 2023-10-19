@@ -101,7 +101,7 @@ const Routines = () => {
 
         <Buttons pics={Filter} />
       </SearchSection>
-      {!apiData ? (
+      {apiData.length !== 0 ? (
         <FlatList
           data={apiData}
           renderItem={renderingDataCard}
