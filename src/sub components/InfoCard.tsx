@@ -5,18 +5,7 @@ import {useSwipeable} from 'react-swipeable';
 
 const InfoCard = (props: {name; aidPicture; schedule}) => {
   const {name, aidPicture, schedule} = props;
-  const handlers = useSwipeable({
-    onSwiped: eventData => console.log('User Swiped!', eventData),
-  });
-  const onSwipedLeft = () => {
-    // Handle left swipe, e.g., navigate to a different screen
-    console.log('Swiped left');
-  };
 
-  const onSwipedRight = () => {
-    // Handle right swipe, e.g., open more information
-    console.log('Swiped right');
-  };
   return (
     <InfoContainer>
       <InfoCardLeftSection>

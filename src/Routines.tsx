@@ -26,10 +26,12 @@ const Routines = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [sorting, setSorting] = useState(true);
+  // this function receives data from the function in api file
   const dataReceiving = async () => {
     const data = await fetchData();
     setApiData(data);
   };
+  // this function renders card according to data receive from flatlist
   const renderingDataCard = ({item, index}) => {
     return (
       <InfoCard
@@ -39,7 +41,7 @@ const Routines = () => {
       />
     );
   };
-
+  // this function used for search query
   const searchData = (query: string) => {
     setSearchQuery(query);
     if (query) {
@@ -53,7 +55,7 @@ const Routines = () => {
       dataReceiving();
     }
   };
-
+  //this function is used to sort card in accending or descending order
   const sortData = () => {
     const sortedData = [...apiData];
     sortedData.sort((a, b) => {
